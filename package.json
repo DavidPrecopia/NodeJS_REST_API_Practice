@@ -1,0 +1,14 @@
+{
+  "name": "nodejs_rest_api_practice",
+  "version": "1.0.0",
+  "description": "Practicing implementing a RESTful API with NodeJS. In particular, order management.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "David M Precopia",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
