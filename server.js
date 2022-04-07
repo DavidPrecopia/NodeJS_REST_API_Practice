@@ -10,7 +10,7 @@ const app = require('./app')
 const port = process.env.PORT || 8080
 
 // `createServer()` accepts a listener - called with every new server, and returns a response.
-// this call the app module/file - our middleware for processing the requests
+// this calls the app module - our middleware for processing the requests
 const server = http.createServer(app)
 
 // tell the server to start listening on the given port.

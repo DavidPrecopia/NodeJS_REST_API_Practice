@@ -48,3 +48,13 @@ app.js
 Modules and exporting them
 * Appears to be similar to libraries, or extension functions in Kotlin.
 * When I typed `const express = required(‘express’)` I’m creating a variable for the Express module/library.
+* With `modules.exports = app`, I am enabling other files to access the `app.js` module/file.
+
+## **Lesson 3: Adding More Routes to the API**
+Node.js notes
+* Equality operator (==) VS Strict Equality operator (===)
+    * The former attempts to covert and compare each argument.
+    * The latter compares as is.
+
+Specifying routes in their own js files
+* Each js file is "imported" (not sure what to call it yet) in `app.js` (the middleware) and then tied to the app itself.
