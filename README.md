@@ -71,20 +71,29 @@ Specifying routes in their own js files
 [Morgan](https://www.npmjs.com/package/morgan)
 * Logger
 * `npm install --save morgan`
-* Since it is middleware as well, we initialize it in [app.js](https://github.com/DavidPrecopia/NodeJS_REST_API_Practice/blob/initial-set-up/app.js#L19) (details notes there).
+* Since it is middleware as well, we initialize it in [app.js](https://github.com/DavidPrecopia/NodeJS_REST_API_Practice/blob/initial-set-up/app.js#L40) (details notes there).
 
 Error handling
 * Declared in a similar manner as we did with Routes. Expect no path is supplied so it process any requests to undefined paths and routes that thrown an error (will be 2 separate functions).
-* Detailed notes in [app.js](https://github.com/DavidPrecopia/NodeJS_REST_API_Practice/blob/initial-set-up/app.js#L39).
+* Detailed notes in [app.js](https://github.com/DavidPrecopia/NodeJS_REST_API_Practice/blob/initial-set-up/app.js#L60).
 
 ## **[Lesson 5: Parsing the Body & Handling CORS](https://www.youtube.com/watch?v=zoSJ3bNGPp0&list=PL55RiY5tL51q4D-B63KBnygU6opNPFk_q&index=5)**
 [body-parser](https://www.npmjs.com/package/body-parser)
 * This package extracts the body of the request for access via the `req.body` const. It's easier to use the what Node.js has out of the box.
 * `npm install --save body-parser`
-* As with Morgan in the last lesson, it is middleware thus you need to initialize it in [app.js](https://github.com/DavidPrecopia/NodeJS_REST_API_Practice/blob/initial-set-up/app.js#L26).
+* As with Morgan in the last lesson, it is middleware thus you need to initialize it in [app.js](https://github.com/DavidPrecopia/NodeJS_REST_API_Practice/blob/initial-set-up/app.js#L47).
 * An example of it in-action can be found [here](https://github.com/DavidPrecopia/NodeJS_REST_API_Practice/blob/initial-set-up/api/routes/orders.js#L13).
 
 urlencoded
 * Regarding body-parser, once of the types it can parse is urlencoded.
 * urlencoded is when symbols are turned into text that can safely be transmitted to an API.
 * For more info, and an example, see, https://stackoverflow.com/a/47515823
+
+CORS (Cross-Origin-Resource-Sharing)
+* This is very basic permission management.
+* When an app makes a request to an API, it's trying to access data that is not stored locally, thus, it needs to be determined whether or not it should have access to the date the API is storing. That is where CORS comes in.
+* It's apart of the header the server returns with its response. It specifies which, if any, URLs are allowed to access it.
+* Whenever a request is made to an API, a browser first sends a `OPTIONS` (an HTTP method) request first to check if the web page/browser has the permission to access that API.
+    * With apps like Postman, the `OPTIONS` request is not sent at all. Thus, this is only basic permission management.
+* For the tutorial's explanation, see [here](https://youtu.be/zoSJ3bNGPp0?t=426).
+* See [app.js](https://github.com/DavidPrecopia/NodeJS_REST_API_Practice/blob/initial-set-up/app.js#L16) for the implementation.

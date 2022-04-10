@@ -13,6 +13,27 @@ const morgan = require('morgan')
 const bodyParser = require('body-parser')
 
 
+//HEADERS for CORS
+//This will set the headers for all subsequent responses.
+app.use((req, res, next) => {
+    //The second arg, the asterisk in this case, are saying to accept from everything.
+    //You could pass a specific URL to limit access to only your web site for example.
+    //As for the various headers that are accepted, IDK right now about the different types listed.
+    res.header('Access-Control-Allow-Origin', '*')
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization')
+
+    //This adds an additionally header for the OPTIONS request that comes from the browser.
+    //It specifies which HTTP methods are allowed.
+    if (req.method === 'OPTIONS') {
+        res.header('Access-Control-Allow-Methods', 'GET, POST, PATCH, DELETE, PUT')
+        //since we know this is coming from the browser, we simple return OK with an empty JSON body.
+        return res.status(200).json({})
+    }
+
+    //Finally need to invoke the next function so the request is forwarded on.
+    next()
+})
+
 const productsRoute = require('./api/routes/products')
 const ordersRoute = require('./api/routes/orders')
 
