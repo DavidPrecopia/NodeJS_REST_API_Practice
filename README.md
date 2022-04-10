@@ -59,7 +59,7 @@ Node.js notes
 Specifying routes in their own js files
 * Each js file is "imported" (not sure what to call it yet) in `app.js` (the middleware) and then tied to the app itself.
 
-### **[Lesson 4: Handling Errors & Improving the Project Setup](https://www.youtube.com/watch?v=UVAMha41dwo&list=PL55RiY5tL51q4D-B63KBnygU6opNPFk_q&index=4)**
+## **[Lesson 4: Handling Errors & Improving the Project Setup](https://www.youtube.com/watch?v=UVAMha41dwo&list=PL55RiY5tL51q4D-B63KBnygU6opNPFk_q&index=4)**
 [nodemod](https://github.com/remy/nodemon)
 * Will automatically reload the project when you change any file.
 * Install with `npm install --save-dev nodemon`
@@ -67,7 +67,12 @@ Specifying routes in their own js files
 * After install add `"start": "nodemon server.js"` to the `scripts` block in the package.json file.
     * Since nodemon is not system wide, you cannot simply run `nodemod server.js` from the terminal. Adding the command to package.json ensure when you run `node start` it will search within the project, not the system.
     * The `start` command is a special script. Normally, running `npm start` will run `npm server.js`. This edit will ensure it uses nodemod.
+    
 [Morgan](https://www.npmjs.com/package/morgan)
 * Logger
 * `npm install --save morgan`
 * Since it is middleware as well, we initialize it in [app.js](https://github.com/DavidPrecopia/NodeJS_REST_API_Practice/blob/initial-set-up/app.js) (details notes there).
+
+Error handling
+* Declared in a similar manner as we did with Routes. Expect no path is supplied so it process any requests to undefined paths and routes that thrown an error (will be 2 separate functions).
+* Detailed notes in [app.js](https://github.com/DavidPrecopia/NodeJS_REST_API_Practice/blob/initial-set-up/app.js).
