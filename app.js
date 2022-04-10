@@ -26,6 +26,7 @@ const ordersRoute = require('./api/routes/orders')
 //This is setting up Morgan as a middleware. Ensuring all requests are first funneled through it first.
 //Internally, it will use the `next` function to forward said request to our defined routes - passes it along.
 //Unlike the routes below this, we are not specifying the path since we want it to intercept all incoming requests.
+//`dev` refers to a pre-defined format for the log messages.
 app.use(morgan('dev'))
 
 //the second arg specifies which file will handle all requests to this path.
