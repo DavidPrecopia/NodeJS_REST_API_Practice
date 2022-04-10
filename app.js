@@ -7,6 +7,9 @@ const express = require('express')
 // this creates a unit of functionality (module) - exported below for use elsewhere
 const app = express()
 
+//import the Morgan package
+const morgan = require('morgan')
+
 // this sets-up the basic middleware.
 // it accepts request, then processes them based upon our logic.
 // Arguments: request, response, next (a function you can execute to move to the next middleware line)
@@ -19,6 +22,11 @@ const app = express()
 
 const productsRoute = require('./api/routes/products')
 const ordersRoute = require('./api/routes/orders')
+
+//This is setting up Morgan as a middleware. Ensuring all requests are first funneled through it first.
+//Internally, it will use the `next` function to forward said request to our defined routes - passes it along.
+//Unlike the routes below this, we are not specifying the path since we want it to intercept all incoming requests.
+app.use(morgan('dev'))
 
 //the second arg specifies which file will handle all requests to this path.
 app.use('/products', productsRoute)
