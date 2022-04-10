@@ -5,7 +5,7 @@ Working through Academind's [Building a RESTful with Node.js lessons](https://yo
 # Scratch Notes
 My personal quick and dirty notes from each lesson.
 
-## **Lesson #1 - What is RESTful?**
+## **[Lesson #1 - What is RESTful?](https://www.youtube.com/watch?v=0oXYLzuucwE&list=PL55RiY5tL51q4D-B63KBnygU6opNPFk_q&index=1)**
 Traditional Web App
 * Client makes a request to a server. 
 * That server returns HTML, JS, etc.
@@ -25,7 +25,7 @@ Official Constrains of a RESTful API
     * Data stored in an database, for an example, is given to the client is a uniform way - separate from how it is actually being stored. 
 
 
-## **Lesson 2: Planning & First Steps**
+## **[Lesson 2: Planning & First Steps](https://www.youtube.com/watch?v=blQ60skPzl0&list=PL55RiY5tL51q4D-B63KBnygU6opNPFk_q&index=2)**
 * Run `npm init` in the newly created dir - so NPM can manage its packages
 * Then `git init` for Git, duh.
 
@@ -50,7 +50,7 @@ Modules and exporting them
 * When I typed `const express = required(‘express’)` I’m creating a variable for the Express module/library.
 * With `modules.exports = app`, I am enabling other files to access the `app.js` module/file.
 
-## **Lesson 3: Adding More Routes to the API**
+## **[Lesson 3: Adding More Routes to the API](https://www.youtube.com/watch?v=FV1Ugv1Temg&list=PL55RiY5tL51q4D-B63KBnygU6opNPFk_q&index=3)**
 Node.js notes
 * Equality operator (==) VS Strict Equality operator (===)
     * The former attempts to covert and compare each argument.
@@ -59,7 +59,7 @@ Node.js notes
 Specifying routes in their own js files
 * Each js file is "imported" (not sure what to call it yet) in `app.js` (the middleware) and then tied to the app itself.
 
-### **Lesson 4: Handling Errors & Improving the Project Setup**
+### **[Lesson 4: Handling Errors & Improving the Project Setup](https://www.youtube.com/watch?v=UVAMha41dwo&list=PL55RiY5tL51q4D-B63KBnygU6opNPFk_q&index=4)**
 [nodemod](https://github.com/remy/nodemon)
 * Will automatically reload the project when you change any file.
 * Install with `npm install --save-dev nodemon`
