@@ -9,16 +9,9 @@ const app = express()
 
 //import the Morgan package
 const morgan = require('morgan')
+//import the body-parser package
+const bodyParser = require('body-parser')
 
-// this sets-up the basic middleware.
-// it accepts request, then processes them based upon our logic.
-// Arguments: request, response, next (a function you can execute to move to the next middleware line)
-// app.use((req, res, next) => {
-//     // simple set status to 200 and return a simple JSON body.
-//     res.status(200).json({
-//         message: `${PRODUCTS_PATH} some message`
-//     })
-// })
 
 const productsRoute = require('./api/routes/products')
 const ordersRoute = require('./api/routes/orders')
@@ -29,6 +22,14 @@ const ordersRoute = require('./api/routes/orders')
 //Unlike the routes below this, we are not specifying the path since we want it to intercept all incoming requests.
 //`dev` refers to a pre-defined format for the log messages.
 app.use(morgan('dev'))
+
+//BODY-PARSER
+//It's arguments specify which body should be supported.
+//For `urlencoded` I'm passing a JS object specifying the options for urlencoded. 
+// Extended set to false so only simple bodies are supported.
+app.use(bodyParser.urlencoded({ extended: false}))
+//Adding parsing for JSON bodies
+app.use(bodyParser.json())
 
 //the second arg specifies which file will handle all requests to this path.
 app.use('/products', productsRoute)

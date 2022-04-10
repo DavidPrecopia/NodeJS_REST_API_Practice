@@ -47,7 +47,7 @@ app.js
 
 Modules and exporting them
 * Appears to be similar to libraries, or extension functions in Kotlin.
-* When I typed `const express = required(‘express’)` I’m creating a variable for the Express module/library.
+* When I typed `const express = required(‘express’)` I’m creating a variable for the Express package.
 * With `modules.exports = app`, I am enabling other files to access the `app.js` module/file.
 
 ## **[Lesson 3: Adding More Routes to the API](https://www.youtube.com/watch?v=FV1Ugv1Temg&list=PL55RiY5tL51q4D-B63KBnygU6opNPFk_q&index=3)**
@@ -71,8 +71,20 @@ Specifying routes in their own js files
 [Morgan](https://www.npmjs.com/package/morgan)
 * Logger
 * `npm install --save morgan`
-* Since it is middleware as well, we initialize it in [app.js](https://github.com/DavidPrecopia/NodeJS_REST_API_Practice/blob/initial-set-up/app.js) (details notes there).
+* Since it is middleware as well, we initialize it in [app.js](https://github.com/DavidPrecopia/NodeJS_REST_API_Practice/blob/initial-set-up/app.js#L19) (details notes there).
 
 Error handling
 * Declared in a similar manner as we did with Routes. Expect no path is supplied so it process any requests to undefined paths and routes that thrown an error (will be 2 separate functions).
-* Detailed notes in [app.js](https://github.com/DavidPrecopia/NodeJS_REST_API_Practice/blob/initial-set-up/app.js).
+* Detailed notes in [app.js](https://github.com/DavidPrecopia/NodeJS_REST_API_Practice/blob/initial-set-up/app.js#L39).
+
+## **[Lesson 5: Parsing the Body & Handling CORS](https://www.youtube.com/watch?v=zoSJ3bNGPp0&list=PL55RiY5tL51q4D-B63KBnygU6opNPFk_q&index=5)**
+[body-parser](https://www.npmjs.com/package/body-parser)
+* This package extracts the body of the request for access via the `req.body` const. It's easier to use the what Node.js has out of the box.
+* `npm install --save body-parser`
+* As with Morgan in the last lesson, it is middleware thus you need to initialize it in [app.js](https://github.com/DavidPrecopia/NodeJS_REST_API_Practice/blob/initial-set-up/app.js#L26).
+* An example of it in-action can be found [here](https://github.com/DavidPrecopia/NodeJS_REST_API_Practice/blob/initial-set-up/api/routes/orders.js#L13).
+
+urlencoded
+* Regarding body-parser, once of the types it can parse is urlencoded.
+* urlencoded is when symbols are turned into text that can safely be transmitted to an API.
+* For more info, and an example, see, https://stackoverflow.com/a/47515823

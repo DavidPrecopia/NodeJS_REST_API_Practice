@@ -12,8 +12,14 @@ routes.get('/', (req, res, next) => {
 })
 
 routes.post('/', (req, res, next) => {
+    const product = {
+        name: req.body.name,
+        price: req.body.price
+    }
+
     res.status(201).json({
-        message: 'POST for /products'
+        message: 'POST for /products',
+        product: product
     })
 })
 
