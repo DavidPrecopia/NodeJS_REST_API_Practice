@@ -2,8 +2,11 @@
 
 Working through Academind's [Building a RESTful with Node.js lessons](https://youtube.com/playlist?list=PL55RiY5tL51q4D-B63KBnygU6opNPFk_q).
 
-# Scratch Notes
 My personal quick and dirty notes from each lesson.
+
+## **Lessons featured per branch**
+* Lessons 1-5 (initial files, paths, etc.), [initial-set-up](https://github.com/DavidPrecopia/NodeJS_REST_API_Practice/tree/initial-set-up)
+* Lessons 5-9 (MongoDB + Mongoose), [adding-databases](https://github.com/DavidPrecopia/NodeJS_REST_API_Practice/tree/adding-database)
 
 ## **[Lesson #1 - What is RESTful?](https://www.youtube.com/watch?v=0oXYLzuucwE&list=PL55RiY5tL51q4D-B63KBnygU6opNPFk_q&index=1)**
 Traditional Web App
