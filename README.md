@@ -97,3 +97,5 @@ CORS (Cross-Origin-Resource-Sharing)
     * With apps like Postman, the `OPTIONS` request is not sent at all. Thus, this is only basic permission management.
 * For the tutorial's explanation, see [here](https://youtu.be/zoSJ3bNGPp0?t=426).
 * See [app.js](https://github.com/DavidPrecopia/NodeJS_REST_API_Practice/blob/initial-set-up/app.js#L16) for the implementation.
+
+## **[Lesson 6: MongoDB and Mongoose](https://www.youtube.com/watch?v=WDrU305J1yw&list=PL55RiY5tL51q4D-B63KBnygU6opNPFk_q&index=6)**
